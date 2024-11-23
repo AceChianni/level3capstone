@@ -1,0 +1,31 @@
+/* poll.css */
+.poll-container {
+  background-color: #f0f0f0; /* Light background for contrast */
+  padding: 15px; /* Padding inside the poll container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 300px; /* Limit the width of the poll */
+  margin: 0 auto; /* Center the poll horizontally */
+}
+
+.poll-container h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center; /* Center the heading */
+}
+
+.poll-container input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.poll-container p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}

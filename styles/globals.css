@@ -5,9 +5,11 @@ html {
     padding: 0;
     font-family: "Arial", sans-serif;
     background-color: #ffd166;
-    /* Background color */
+    /* Warm yellow background */
     color: #333333;
     /* Dark text color for readability */
+    margin-top: 60px;
+    /* Prevent content overlap with navbar */
 }
 
 /* Link Styles */
@@ -57,7 +59,6 @@ h3 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-    margin-top: 60px;
     color: #333333;
 }
 
@@ -66,14 +67,27 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 20px;
+    gap: 20px;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 /* Sidebar */
 .sidebar {
     width: 250px;
     background-color: #ff9bec;
-    /* Updated sidebar background color */
+    /* Bright pink background */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -82,11 +96,12 @@ h3 {
 }
 
 .sidebar h2 {
-    font-family: "Comic Sans MS", cursive;
+    font-family: "Arial", sans-serif;
+    /* Replaced Comic Sans */
     font-size: 20px;
     margin-bottom: 15px;
-    color: #ffd166;
-    /* Color for sidebar h2 */
+    color: #ffffff;
+    /* Adjusted for contrast */
 }
 
 .sidebar ul {

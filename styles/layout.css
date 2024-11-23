@@ -1,0 +1,71 @@
+/* layout.css */
+
+/* Grid container */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Left, center, and right sections */
+  gap: 20px; /* Spacing between sections */
+  padding: 20px;
+}
+
+/* Sidebars */
+.left-sidebar,
+.right-sidebar {
+  background-color: #ff9bec; /* Sidebar background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #333333;
+}
+
+.left-sidebar h2,
+.right-sidebar h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.left-sidebar ul,
+.right-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left-sidebar li,
+.right-sidebar li {
+  margin-bottom: 10px;
+}
+
+.left-sidebar a,
+.right-sidebar a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.left-sidebar a:hover,
+.right-sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+.main-content {
+  background-color: #ffffff; /* Center section background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr; /* Stack sections vertically */
+  }
+
+  .left-sidebar,
+  .main-content,
+  .right-sidebar {
+    margin-bottom: 20px; /* Add spacing between stacked sections */
+  }
+}
