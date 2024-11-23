@@ -39,9 +39,14 @@ const AnimeSlider = () => {
             <h3>{animeData[currentIndex].title}</h3>
           </div>
 
-          <div className="custom-nav">
-            <button onClick={prevSlide}>&lt; Prev</button>
-            <button onClick={nextSlide}>Next &gt;</button>
+          {/* Custom Navigation */}
+          <div className="controls">
+            <button className="prev-btn" onClick={prevSlide}>
+              &#10094;
+            </button>
+            <button className="next-btn" onClick={nextSlide}>
+              &#10095;
+            </button>
           </div>
         </>
       ) : (

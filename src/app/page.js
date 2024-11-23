@@ -45,7 +45,6 @@ const HomePage = () => (
       </ul>
     </div>
     <div className="main-content">
-      <h1>Annii's Anime Finder!</h1>
       <AnimeSlider />
     </div>
     <div className="right-sidebar">
