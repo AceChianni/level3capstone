@@ -1,0 +1,70 @@
+/* Resetting default margin and padding */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Main Content */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #5dd9c1; /* Aqua background */
+}
+
+.quizcontainer {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffe1b3; /* Light Peach container */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 36px;
+  color: #ff9bec; /* Light Pink title */
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Lobster", cursive; /* Anime-themed custom font for header */
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+.question p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #5b507a; /* Dark Purple text */
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Button */
+button {
+  padding: 12px 40px 12px 24px;
+  font-size: 18px;
+  background-color: #ae9bff; /* Lavender button */
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #9b79ff;
+}
