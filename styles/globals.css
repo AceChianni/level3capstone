@@ -1,3 +1,8 @@
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Global Reset and Base Styles */
 body,
 html {
@@ -8,21 +13,21 @@ html {
     /* Warm yellow background */
     color: #333333;
     /* Dark text color for readability */
-    margin-top: 60px;
-    /* Prevent content overlap with navbar */
+}
+
+/* Remove default list styles for navigation */
+ul {
+    list-style-type: none;
+    /* Removes bullet points */
+    padding: 0;
+    /* Removes any default padding */
+    margin: 0;
+    /* Removes any default margin */
 }
 
 /* Link Styles */
 a {
     text-decoration: none;
-}
-
-/* Headings */
-h1,
-h2,
-h3 {
-    color: #333333;
-    /* Dark color for headings */
 }
 
 /* Navigation Bar */
@@ -36,29 +41,15 @@ h3 {
     /* Full width */
     top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
 
-.navbar a {
-    display: inline-block;
-    color: #ffffff;
-    /* Light text color */
-    padding: 14px 16px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.navbar a:hover {
-    background-color: #9b79ff;
-    /* Darker purple on hover */
-}
-
-/* Title */
-.title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+/* Headings */
+h1,
+h2,
+h3 {
     color: #333333;
 }
 
@@ -68,19 +59,6 @@ h3 {
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px;
-}
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .sidebar {
-        width: 100%;
-        margin-bottom: 20px;
-    }
 }
 
 /* Sidebar */
@@ -97,11 +75,9 @@ h3 {
 
 .sidebar h2 {
     font-family: "Arial", sans-serif;
-    /* Replaced Comic Sans */
     font-size: 20px;
     margin-bottom: 15px;
     color: #ffffff;
-    /* Adjusted for contrast */
 }
 
 .sidebar ul {
@@ -120,16 +96,4 @@ h3 {
 
 .sidebar ul li a:hover {
     text-decoration: underline;
-}
-
-/* Content Area - Anime Slideshow */
-.content {
-    text-align: center;
-}
-
-.anime-heading {
-    font-family: Arial, sans-serif;
-    color: #eeeeee;
-    /* Light text color */
-    margin-top: 20px;
 }
