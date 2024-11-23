@@ -1,31 +1,105 @@
 /* poll.css */
+
 .poll-container {
-  background-color: #f0f0f0; /* Light background for contrast */
-  padding: 15px; /* Padding inside the poll container */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  max-width: 300px; /* Limit the width of the poll */
-  margin: 0 auto; /* Center the poll horizontally */
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.poll-container h2 {
-  font-size: 18px;
-  font-weight: bold;
+/* Ensure each option is displayed on its own line */
+.poll-option {
+  display: block;
+  /* Make sure each option is on its own line */
   margin-bottom: 10px;
-  text-align: center; /* Center the heading */
+  /* Space between options */
 }
 
-.poll-container input {
-  width: 100%;
-  padding: 8px;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* Remove inline style for radio buttons and ensure block elements */
+input[type="radio"] {
+  margin-right: 10px;
 }
 
-.poll-container p {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
-  text-align: center;
+/* Results and bar chart display */
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff4081;
+}
+
+button:focus {
+  outline: none;
+}
+
+.poll-container .text-black {
+  color: black;
+  /* Ensure all text is black */
+}
+
+/* Style for the bar chart labels and bars */
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.space-y-2 {
+  margin-bottom: 0.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+.text-white {
+  color: white;
+  /* Default white color */
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.py-1 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.px-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.rounded-md {
+  border-radius: 8px;
+}
+
+.ml-2 {
+  margin-left: 8px;
+}
+
+/* Fix the text color inside the bar to black */
+.bg-blue-500 {
+  position: relative;
+}
+
+.bg-blue-500 .vote-text {
+  color: black;
+  /* Ensure the text inside the blue bar is black */
+}
+
+/* Styling for the heart button */
+button {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }

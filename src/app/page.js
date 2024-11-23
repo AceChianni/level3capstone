@@ -1,26 +1,3 @@
-// // src/app/page.js
-// import React from "react";
-// import "/styles/animeSlider.css";
-// import "/styles/globals.css";
-// import AnimeSlider from "../components/AnimeSlider";
-// import Poll from "../components/Poll";
-
-// const HomePage = () => (
-//   <div className="home-page">
-//     <h1>Annii's Anime Finder!</h1>
-//     <div className="content-container">
-//       <div className="slider-section">
-//         <AnimeSlider />
-//       </div>
-//       <div className="poll-section">
-//         <Poll />
-//       </div>
-//     </div>
-//   </div>
-// );
-
-// export default HomePage;
-
 // src/app/page.js
 import "/styles/globals.css";
 import "/styles/animeSlider.css";
