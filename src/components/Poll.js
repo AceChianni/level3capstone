@@ -14,7 +14,6 @@ const Poll = () => {
     "Attack on Titan",
     "My Hero Academia",
     "Demon Slayer",
-    "Other",
   ];
 
   const handleVote = (index) => {
