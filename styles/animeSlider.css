@@ -1,0 +1,81 @@
+/* src/styles/animeSlider.css */
+
+/* Centered container for the slideshow */
+.anime-slider {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  /* Ensure all children stack vertically */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title styling */
+.anime-item h3 {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+/* Anime image styling */
+.anime-item img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Navigation buttons styling */
+.custom-nav {
+  display: flex;
+  justify-content: center;
+  /* Center the buttons */
+  gap: 10px;
+  margin-top: 10px;
+  /* Add space between the image and the buttons */
+  width: 100%;
+  /* Ensure the buttons span container width */
+}
+
+.custom-nav button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: white;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 10px;
+  /* Small rounded buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: auto;
+  /* Prevent stretching */
+}
+
+.custom-nav button:hover {
+  background-color: #2980b9;
+}
+
+.custom-nav button:focus {
+  outline: none;
+  box-shadow: 0 0 4px 2px rgba(52, 152, 219, 0.7);
+}
+
+.custom-nav button:disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}

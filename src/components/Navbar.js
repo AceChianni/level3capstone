@@ -10,6 +10,15 @@ export default function Navbar() {
         <li>
           <Link href="/about">About</Link>
         </li>
+        <li>
+          <Link href="/quiz">Quiz</Link>
+        </li>
+        <li>
+          <Link href="/contact">Contact Us</Link>
+        </li>
+        <li>
+          <Link href="/gallery">Gallery</Link>
+        </li>
       </ul>
     </nav>
   );

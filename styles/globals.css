@@ -1,3 +1,120 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Global Reset and Base Styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #ffd166;
+    /* Background color */
+    color: #333333;
+    /* Dark text color for readability */
+}
+
+/* Link Styles */
+a {
+    text-decoration: none;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    color: #333333;
+    /* Dark color for headings */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #ae9bff;
+    /* Light purple navbar */
+    overflow: hidden;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    /* Full width */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    display: inline-block;
+    color: #ffffff;
+    /* Light text color */
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #9b79ff;
+    /* Darker purple on hover */
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    color: #333333;
+}
+
+/* Main Content Area */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #ff9bec;
+    /* Updated sidebar background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    /* Light text color */
+}
+
+.sidebar h2 {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ffd166;
+    /* Color for sidebar h2 */
+}
+
+.sidebar ul {
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #ffffff;
+    /* Light text color */
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Content Area - Anime Slideshow */
+.content {
+    text-align: center;
+}
+
+.anime-heading {
+    font-family: Arial, sans-serif;
+    color: #eeeeee;
+    /* Light text color */
+    margin-top: 20px;
+}

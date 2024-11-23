@@ -1,8 +1,13 @@
-export default function Home() {
-  return (
-    <main className="p-6">
-      <h1 className="text-3xl font-bold">Welcome to Cap!</h1>
-      <p>This is a Next.js 13+ project using the App Router.</p>
-    </main>
-  );
-}
+// src/app/page.js
+import "/styles/animeSlider.css";
+import "/styles/globals.css";
+import AnimeSlider from "../components/AnimeSlider";
+
+const HomePage = () => (
+  <div className="home-page">
+    <h1>Annii's Anime Finder!</h1>
+    <AnimeSlider />
+  </div>
+);
+
+export default HomePage;
