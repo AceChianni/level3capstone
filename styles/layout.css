@@ -3,15 +3,18 @@
 /* Grid container */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr; /* Left, center, and right sections */
-  gap: 20px; /* Spacing between sections */
+  grid-template-columns: 1fr 2fr 1fr;
+  /* Left, center, and right sections */
+  gap: 20px;
+  /* Spacing between sections */
   padding: 20px;
 }
 
 /* Sidebars */
 .left-sidebar,
 .right-sidebar {
-  background-color: #ff9bec; /* Sidebar background */
+  background-color: #ff9bec;
+  /* Sidebar background */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -24,6 +27,8 @@
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
+  color: #000000;
+  /* Ensure headings in the sidebar are black for readability */
 }
 
 .left-sidebar ul,
@@ -51,7 +56,8 @@
 
 /* Main content */
 .main-content {
-  background-color: #ffffff; /* Center section background */
+  background-color: #ffffff;
+  /* Center section background */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -60,12 +66,30 @@
 /* Responsive design for small screens */
 @media (max-width: 768px) {
   .layout {
-    grid-template-columns: 1fr; /* Stack sections vertically */
+    grid-template-columns: 1fr;
+    /* Stack sections vertically */
+    padding: 10px;
+    /* Less padding on small screens */
   }
 
   .left-sidebar,
   .main-content,
   .right-sidebar {
-    margin-bottom: 20px; /* Add spacing between stacked sections */
+    margin-bottom: 20px;
+    /* Add spacing between stacked sections */
+    padding: 15px;
+    /* Adjust padding for smaller screens */
+  }
+
+  .left-sidebar a,
+  .right-sidebar a {
+    font-size: 14px;
+    /* Make links a bit smaller on small screens */
+  }
+
+  .left-sidebar h2,
+  .right-sidebar h2 {
+    font-size: 16px;
+    /* Smaller heading font size for better fit */
   }
 }
