@@ -10,90 +10,18 @@ html {
     padding: 0;
     font-family: "Arial", sans-serif;
     background-color: #ffd166;
-    /* Warm yellow background */
     color: #333333;
-    /* Dark text color for readability */
 }
 
-/* Remove default list styles for navigation */
-ul {
+/* Remove default list styles for non-Tailwind styled navigation */
+ul:not([class]) {
     list-style-type: none;
-    /* Removes bullet points */
     padding: 0;
-    /* Removes any default padding */
     margin: 0;
-    /* Removes any default margin */
 }
 
-/* Link Styles */
-a {
+/* Default link styles */
+a:not([class]) {
     text-decoration: none;
-}
-
-/* Navigation Bar */
-.navbar {
-    background-color: #ae9bff;
-    /* Light purple navbar */
-    overflow: hidden;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    /* Full width */
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-}
-
-/* Headings */
-h1,
-h2,
-h3 {
-    color: #333333;
-}
-
-/* Main Content Area */
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 250px;
-    background-color: #ff9bec;
-    /* Bright pink background */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: #ffffff;
-    /* Light text color */
-}
-
-.sidebar h2 {
-    font-family: "Arial", sans-serif;
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-
-.sidebar ul {
-    padding-left: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-    color: #ffffff;
-    /* Light text color */
-    text-decoration: none;
-}
-
-.sidebar ul li a:hover {
-    text-decoration: underline;
+    color: inherit;
 }

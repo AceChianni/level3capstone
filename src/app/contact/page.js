@@ -1,0 +1,19 @@
+import AnimeSlider from "../components/AnimeSlider";
+import Poll from "../components/Poll";
+import Sidebar from "../components/Sidebar";
+
+const HomePage = () => (
+  <div className="layout">
+    <div className="left-sidebar">
+      <Sidebar />
+    </div>
+    <div className="main-content">
+      <AnimeSlider />
+    </div>
+    <div className="right-sidebar">
+      <Poll />
+    </div>
+  </div>
+);
+
+export default HomePage;
