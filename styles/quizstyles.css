@@ -1,20 +1,125 @@
-/* styles/quizstyles.css */
+/* General container styles */
 .quiz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   padding: 20px;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Quiz card styling */
+.quiz-card {
+  background-color: #e0f7fa; /* Light blue */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
   text-align: center;
 }
 
-.quiz-form {
-  margin-top: 20px;
+.quiz-card h2 {
+  font-size: 1.8rem; /* Slightly smaller text */
+  margin-bottom: 20px;
+  font-family: "Georgia", serif;
 }
 
-.question {
-  margin-bottom: 15px;
+/* Darker blue card for results */
+.results-card {
+  background-color: #004d40; /* Dark blue */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px 0;
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-label {
-  display: block;
+.recommendations-title {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* Title styling for anime recommendations */
+.anime-item h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
   margin: 10px 0;
+  color: yellowgreen;
+}
+
+/* Styling for anime cover art */
+.anime-item img {
+  max-width: 250px;
+  margin: 10px auto;
+  border-radius: 10px;
+  display: block;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Styling for description */
+.anime-item p {
+  font-size: 0.9rem;
+  color: #f5f5f5;
+  margin-bottom: 10px;
+}
+
+/* Load more button styling */
+.load-more-button {
+  background-color: #81d4fa; /* Light blue */
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.load-more-button:hover {
+  background-color: #29b6f6; /* Darker light blue */
+}
+
+/* Reset quiz button styling */
+.reset-quiz-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #81d4fa; /* Sky blue */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-quiz-button:hover {
+  background-color: #29b6f6; /* Darker sky blue */
+}
+
+/* Styling for individual questions */
+.question {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.question label {
+  display: flex;
+  align-items: center; /* Align radio button with text */
+  margin: 10px 0;
+}
+
+.question input[type="radio"] {
+  margin-right: 10px; /* Space between radio and label */
 }
 
 button {
@@ -23,22 +128,10 @@ button {
   background-color: #004d40;
   color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
   background-color: #ff7043;
-}
-
-.recommendations {
-  margin-top: 20px;
-}
-
-.anime-item {
-  margin-bottom: 20px;
-}
-
-.anime-item img {
-  max-width: 200px;
-  margin-bottom: 10px;
 }

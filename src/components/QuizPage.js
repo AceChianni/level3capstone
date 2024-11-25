@@ -7,12 +7,12 @@ const GENRE_IDS = {
   Comedy: "Comedy",
   Action: "Action",
   Fantasy: "Fantasy",
-  "Science Fiction": "Sci-Fi",
+  Romance: "Romance",
   "Serious and deep": "Drama",
   "Funny and quirky": "Comedy",
   "Brave and adventurous": "Adventure",
   "Magical and mystical": "Fantasy",
-  "Intelligent and innovative": "Sci-Fi",
+  "Heartwarming and romantic": "Romance",
   "Emotionally gripping": "Drama",
   "Light-hearted and humorous": "Comedy",
   "Full of thrilling battles": "Action",
@@ -23,180 +23,348 @@ const GENRE_IDS = {
   "Fantasy world": "Fantasy",
   "Outer space": "Sci-Fi",
   "Historical era": "Historical",
+  "A romantic getaway": "Romance",
   "Serious and intense": "Drama",
   "Light-hearted and fun": "Comedy",
   "Mysterious and suspenseful": "Mystery",
   "Whimsical and magical": "Fantasy",
   "Futuristic and innovative": "Sci-Fi",
+  "Passionate and emotional": "Romance",
 };
 
-const QuizPage = () => {
+// const QuizPage = ({ questions }) => {
+//   const [currentQuestion, setCurrentQuestion] = useState(0);
+//   const [selectedAnswers, setSelectedAnswers] = useState([]);
+//   const [recommendations, setRecommendations] = useState(null);
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [showPopup, setShowPopup] = useState(false);
+
+//   const handleAnswerChange = (e) => {
+//     const { value } = e.target;
+//     setSelectedAnswers((prev) => {
+//       const updated = [...prev];
+//       updated[currentQuestion] = value;
+//       return updated;
+//     });
+//   };
+
+//   const showNextQuestion = () => {
+//     if (!selectedAnswers[currentQuestion]) {
+//       alert("Please select an answer before proceeding.");
+//       return;
+//     }
+//     if (currentQuestion < questions.length - 1) {
+//       setCurrentQuestion((prev) => prev + 1);
+//     } else {
+//       submitQuiz();
+//     }
+//   };
+
+//   const submitQuiz = async () => {
+//     setIsLoading(true);
+//     const genres = selectedAnswers.map((answer) => GENRE_IDS[answer]);
+//     const uniqueGenres = [...new Set(genres)];
+
+//     const query = `
+//       query ($genres: [String]) {
+//         Page(perPage: 5) {
+//           media(genre_in: $genres, type: ANIME, sort: POPULARITY_DESC) {
+//             title {
+//               romaji
+//             }
+//             coverImage {
+//               large
+//             }
+//             description
+//             siteUrl
+//           }
+//         }
+//       }`;
+
+//     const variables = { genres: uniqueGenres };
+
+//     try {
+//       const response = await fetch("https://graphql.anilist.co", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//           query,
+//           variables,
+//         }),
+//       });
+
+//       const { data } = await response.json();
+//       if (data.Page.media.length > 0) {
+//         setRecommendations(data.Page.media);
+//       } else {
+//         if (!showPopup) {
+//           // Only show popup once
+//           setShowPopup(true); // Show the popup if no recommendations
+//         }
+//       }
+//     } catch (error) {
+//       console.error("Error fetching recommendations:", error);
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   };
+
+//   const loadMoreRecommendations = () => {
+//     if (recommendations.length < 10) {
+//       alert(
+//         "No more recommendations available. Please try restarting the quiz."
+//       );
+//       if (!showPopup) {
+//         // Only show popup once
+//         setShowPopup(true); // Show the popup if there are no more recommendations
+//       }
+//     }
+//   };
+
+//   const resetQuiz = () => {
+//     setCurrentQuestion(0);
+//     setSelectedAnswers([]);
+//     setRecommendations(null);
+//     setShowPopup(false);
+//   };
+
+//   return (
+//     <div className="quiz-container">
+//       {questions[currentQuestion] && (
+//         <div className="quiz-card">
+//           <h2>{questions[currentQuestion].question}</h2>
+//           <div className="question">
+//             {questions[currentQuestion].options.map((option, index) => (
+//               <label key={index}>
+//                 <input
+//                   type="radio"
+//                   value={option}
+//                   checked={selectedAnswers[currentQuestion] === option}
+//                   onChange={handleAnswerChange}
+//                 />
+//                 {option}
+//               </label>
+//             ))}
+//           </div>
+//           {currentQuestion < questions.length - 1 ? (
+//             <button onClick={showNextQuestion}>Next Question</button>
+//           ) : (
+//             <button onClick={submitQuiz}>Get Results</button>
+//           )}
+//         </div>
+//       )}
+
+//       {/* Recommendations Section */}
+//       {recommendations && recommendations.length > 0 && (
+//         <div className="results-card">
+//           <h3 className="recommendations-title">Your Recommendations</h3>
+//           {recommendations.map((anime, index) => (
+//             <div className="anime-item" key={index}>
+//               <h3>{anime.title.romaji}</h3>
+//               <img src={anime.coverImage.large} alt={anime.title.romaji} />
+//               <p>{anime.description}</p>
+//               <a href={anime.siteUrl} target="_blank" rel="noopener noreferrer">
+//                 Go to site
+//               </a>
+//             </div>
+//           ))}
+//           <button
+//             className="load-more-button"
+//             onClick={loadMoreRecommendations}
+//           >
+//             Load More
+//           </button>
+//         </div>
+//       )}
+
+//       {/* Reset Quiz Button */}
+//       <button onClick={resetQuiz} className="reset-button">
+//         Reset Quiz
+//       </button>
+
+//       {/* Popup Alert */}
+//       {showPopup && (
+//         <div className="popup-alert active">
+//           <h4>Oops! No More Recommendations</h4>
+//           <p>
+//             It looks like there are no more recommendations. Please try
+//             restarting the quiz.
+//           </p>
+//           <button onClick={() => setShowPopup(false)}>Close</button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default QuizPage;
+
+const QuizPage = ({ questions }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
   const [recommendations, setRecommendations] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
-  const questions = [
-    {
-      id: 1,
-      question: "What genre of anime do you prefer?",
-      options: ["Drama", "Comedy", "Action", "Fantasy"],
-    },
-    {
-      id: 2,
-      question: "What type of mood do you enjoy?",
-      options: [
-        "Serious and deep",
-        "Funny and quirky",
-        "Light-hearted and humorous",
-        "Brave and adventurous",
-      ],
-    },
-    // Add more questions here as needed
-  ];
+  const [showPopup, setShowPopup] = useState(false); // state for popup visibility
+  const [quizFinished, setQuizFinished] = useState(false); // state to track if quiz is finished
 
   const handleAnswerChange = (e) => {
     const { value } = e.target;
-    setSelectedAnswers((prevAnswers) => {
-      const updatedAnswers = [...prevAnswers];
-      updatedAnswers[currentQuestion] = value;
-      return updatedAnswers;
+    setSelectedAnswers((prev) => {
+      const updated = [...prev];
+      updated[currentQuestion] = value;
+      return updated;
     });
   };
 
   const showNextQuestion = () => {
-    if (selectedAnswers[currentQuestion]) {
-      if (currentQuestion < questions.length - 1) {
-        setCurrentQuestion(currentQuestion + 1);
-      } else {
-        submitQuiz();
-      }
+    if (!selectedAnswers[currentQuestion]) {
+      alert("Please select an answer before proceeding.");
+      return;
+    }
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion((prev) => prev + 1);
     } else {
-      alert("Please answer the question before proceeding.");
+      submitQuiz();
     }
   };
 
   const submitQuiz = async () => {
-    if (selectedAnswers.length === questions.length) {
-      setIsLoading(true);
-      await fetchRecommendations();
-    } else {
-      alert("Please answer all questions before submitting.");
-    }
-  };
-
-  const fetchRecommendations = async () => {
-    const genreNames = selectedAnswers.map((answer) => GENRE_IDS[answer]);
-    const uniqueGenreNames = [...new Set(genreNames)];
+    setIsLoading(true);
+    const genres = selectedAnswers.map((answer) => GENRE_IDS[answer]);
+    const uniqueGenres = [...new Set(genres)];
 
     const query = `
-            query ($genres: [String]) {
-                Page(perPage: 5) {
-                    media(genre_in: $genres, type: ANIME, sort: POPULARITY_DESC) {
-                        title {
-                            romaji
-                        }
-                        coverImage {
-                            large
-                        }
-                        description
-                        siteUrl
-                    }
-                }
+      query ($genres: [String]) {
+        Page(perPage: 5) {
+          media(genre_in: $genres, type: ANIME, sort: POPULARITY_DESC) {
+            title {
+              romaji
             }
-        `;
+            coverImage {
+              large
+            }
+            description
+            siteUrl
+          }
+        }
+      }`;
 
-    const variables = {
-      genres: uniqueGenreNames,
-    };
+    const variables = { genres: uniqueGenres };
 
     try {
       const response = await fetch("https://graphql.anilist.co", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
         body: JSON.stringify({
-          query: query,
-          variables: variables,
+          query,
+          variables,
         }),
       });
 
-      const data = await response.json();
-      setIsLoading(false);
-
-      if (data.data.Page.media.length > 0) {
-        displayRecommendations(data.data.Page.media);
+      const { data } = await response.json();
+      if (data.Page.media.length > 0) {
+        setRecommendations(data.Page.media);
       } else {
-        setRecommendations(
-          "No recommendations found. Try again with different options."
-        );
+        if (!showPopup) {
+          // Only show popup once
+          setShowPopup(true); // Show the popup if no recommendations
+        }
       }
+      setQuizFinished(true); // Mark quiz as finished after submission
     } catch (error) {
-      setIsLoading(false);
-      setRecommendations(
-        "Failed to fetch recommendations. Please try again later."
-      );
       console.error("Error fetching recommendations:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const displayRecommendations = (animeList) => {
-    setRecommendations(
-      animeList.map((anime) => (
-        <div key={anime.title.romaji} className="anime-item">
-          <h3>{anime.title.romaji}</h3>
-          <img src={anime.coverImage.large} alt={anime.title.romaji} />
-          <p>{anime.description}</p>
-          <a href={anime.siteUrl} target="_blank" rel="noopener noreferrer">
-            More Info
-          </a>
-        </div>
-      ))
-    );
+  const loadMoreRecommendations = () => {
+    if (recommendations.length < 10) {
+      alert(
+        "No more recommendations available. Please try restarting the quiz."
+      );
+      if (!showPopup) {
+        // Only show popup once
+        setShowPopup(true); // Show the popup if there are no more recommendations
+      }
+    }
   };
 
   const resetQuiz = () => {
-    setSelectedAnswers([]);
     setCurrentQuestion(0);
+    setSelectedAnswers([]);
     setRecommendations(null);
+    setShowPopup(false);
+    setQuizFinished(false); // Reset the quiz status
   };
 
   return (
-    <div>
-      {questions.length > 0 && (
-        <div>
+    <div className="quiz-container">
+      {!quizFinished && questions[currentQuestion] && (
+        <div className="quiz-card">
           <h2>{questions[currentQuestion].question}</h2>
-          <form>
+          <div className="question">
             {questions[currentQuestion].options.map((option, index) => (
-              <div key={index}>
+              <label key={index}>
                 <input
                   type="radio"
-                  id={option}
-                  name={`question-${currentQuestion}`}
                   value={option}
                   checked={selectedAnswers[currentQuestion] === option}
                   onChange={handleAnswerChange}
                 />
-                <label htmlFor={option}>{option}</label>
-              </div>
+                {option}
+              </label>
             ))}
-          </form>
-          <button onClick={showNextQuestion}>Next</button>
+          </div>
+          {currentQuestion < questions.length - 1 ? (
+            <button onClick={showNextQuestion}>Next Question</button>
+          ) : (
+            <button onClick={submitQuiz}>Get Results</button>
+          )}
         </div>
       )}
 
-      {isLoading && <p>Loading recommendations...</p>}
+      {/* Recommendations Section */}
+      {quizFinished && recommendations && recommendations.length > 0 && (
+        <div className="results-card">
+          <h3 className="recommendations-title">Your Recommendations</h3>
+          {recommendations.map((anime, index) => (
+            <div className="anime-item" key={index}>
+              <h3>{anime.title.romaji}</h3>
+              <img src={anime.coverImage.large} alt={anime.title.romaji} />
+              <p>{anime.description}</p>
+              <a href={anime.siteUrl} target="_blank" rel="noopener noreferrer">
+                Go to site
+              </a>
+            </div>
+          ))}
+          <button
+            className="load-more-button"
+            onClick={loadMoreRecommendations}
+          >
+            Load More
+          </button>
+        </div>
+      )}
 
-      {recommendations && (
-        <div>
-          {Array.isArray(recommendations) ? (
-            recommendations
-          ) : (
-            <p>{recommendations}</p>
-          )}
-          <button onClick={resetQuiz}>Restart Quiz</button>
+      {/* Reset Quiz Button */}
+      <button onClick={resetQuiz} className="reset-button">
+        Reset Quiz
+      </button>
+
+      {/* Popup Alert */}
+      {showPopup && (
+        <div className="popup-alert active">
+          <h4>Oops! No More Recommendations</h4>
+          <p>
+            It looks like there are no more recommendations. Please try
+            restarting the quiz.
+          </p>
+          <button onClick={() => setShowPopup(false)}>Close</button>
         </div>
       )}
     </div>
