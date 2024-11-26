@@ -1,6 +1,7 @@
-import "/styles/globals.css";
 import "/styles/animeSlider.css";
 import "/styles/layout.css";
+import "/styles/globals.css";
+
 import AnimeSlider from "../components/AnimeSlider";
 import Poll from "../components/Poll";
 import Sidebar from "../components/Sidebar";

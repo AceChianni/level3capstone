@@ -1,5 +1,4 @@
 // app/quiz/page.js
-
 "use client";
 import React from "react";
 import "/styles/quizstyles.css";
@@ -8,7 +7,7 @@ import QuizPage from "@/components/QuizPage";
 const questions = [
   {
     id: 1,
-    question: "What genre of anime do you prefer?",
+    question: "What genre of TV show do you prefer?",
     options: ["Drama", "Comedy", "Action", "Fantasy", "Romance"],
   },
   {

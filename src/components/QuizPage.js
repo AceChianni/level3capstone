@@ -179,15 +179,14 @@ const QuizPage = ({ questions }) => {
           >
             Load More
           </button>
+          {/* Reset Quiz Button */}
+          <button onClick={resetQuiz} className="reset-button">
+            Reset Quiz
+          </button>
         </div>
       )}
 
-      {/* Reset Quiz Button */}
-      <button onClick={resetQuiz} className="reset-button">
-        Reset Quiz
-      </button>
-
-      {/* Popup Alert */}
+      {/* Popup Alert
       {showPopup && (
         <div className="popup-alert active">
           <h4>Oops! No More Recommendations</h4>
@@ -197,7 +196,7 @@ const QuizPage = ({ questions }) => {
           </p>
           <button onClick={() => setShowPopup(false)}>Close</button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

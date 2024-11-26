@@ -18,38 +18,52 @@ body {
   box-sizing: border-box;
 }
 
+/* Container: Ensure the form is centered and responsive */
 .container {
   max-width: 600px;
-  margin: 40px auto;
+  margin: 80px auto 40px;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Heading Style */
 h1 {
   text-align: center;
   font-size: 36px;
   color: var(--pink);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 20px;
 }
 
+/* Form container for better column layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Add gap between form elements */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Grouping form elements */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Label styling */
 label {
   font-weight: bold;
   color: var(--pink);
   margin-bottom: 5px;
+  font-size: 16px;
 }
 
+/* Inputs and textarea styling: Ensure full width with proper spacing */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -62,6 +76,7 @@ textarea {
   box-sizing: border-box;
 }
 
+/* Button styling with smooth transition and proper spacing */
 button {
   padding: 12px 20px;
   font-size: 16px;
@@ -79,14 +94,13 @@ button:hover {
   background-color: var(--teal);
 }
 
+/* Navbar fixed position with proper z-index */
 .navbar {
   background-color: var(--light-purple);
-  /* Light purple navbar */
   overflow: hidden;
   text-align: center;
   position: fixed;
   width: 100%;
-  /* Full width */
   top: 0;
   z-index: 1000;
 }
@@ -99,21 +113,10 @@ button:hover {
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
-  /* Make navigation links bold */
 }
 
 .navbar a:hover {
   background-color: #9b79ff;
-  /* Darker purple on hover */
-}
-
-/* Custom Styling */
-.container {
-  position: relative;
-}
-
-.submit-button {
-  align-self: center;
 }
 
 /* Popup Styling */
@@ -134,4 +137,23 @@ button:hover {
 
 .popup.visible {
   display: block;
+}
+
+/* Ensure proper spacing and no squishing on smaller screens */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+    /* Slightly smaller heading for mobile */
+  }
+
+  /* Adjust button width on smaller screens */
+  button {
+    width: 100%;
+    /* Full width on smaller screens */
+  }
 }
