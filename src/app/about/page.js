@@ -54,6 +54,7 @@ export default function AboutPage() {
         </ul>
       </section>
       <hr className="section-divider" />
+
       <h2>Tools and Technologies</h2>
       <section className="tools-used">
         <ul>

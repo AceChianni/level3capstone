@@ -186,7 +186,7 @@ const QuizPage = ({ questions }) => {
         </div>
       )}
 
-      {/* Popup Alert
+      {/* Popup Alert */}
       {showPopup && (
         <div className="popup-alert active">
           <h4>Oops! No More Recommendations</h4>
@@ -196,7 +196,7 @@ const QuizPage = ({ questions }) => {
           </p>
           <button onClick={() => setShowPopup(false)}>Close</button>
         </div>
-      )} */}
+      )}
     </div>
   );
 };
