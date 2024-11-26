@@ -1,60 +1,127 @@
-:root {
-  --pink: #ff9bec;
-  --teal: #5dd9c1;
-  --purple: #5b507a;
-  --light-purple: #ae9bff;
-  --peach: #ffe1b3;
-}
-
-body {
-  font-family: "Arial", sans-serif;
-  background-color: var(--peach);
-  color: var(--purple);
+/* Basic Reset */
+body,
+h1,
+h2,
+p,
+ul {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+/* Body and Container */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #ffe1b3; /* Peach background */
+  padding: 20px; /* Padding to ensure spacing from edges */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Push content down from the top */
+  height: 100vh; /* Full viewport height */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto; /* Allow vertical scroll if needed */
 }
 
 .about-container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.85); /* White with reduced opacity */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  padding: 30px;
+  overflow: hidden;
+  margin-top: 30px; /* Pushes the card down a little */
+  position: relative; /* Ensure it's on top of anything else */
+  z-index: 10; /* Ensures it's above anything behind it */
 }
 
-h1,
+/* Header Styling */
+h1 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
+  color: #ff9bec; /* Pink */
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
 h2 {
   text-align: center;
-  color: var(--pink);
-  margin-bottom: 20px;
+  color: #ff9bec; /* Pink */
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-size: 26px;
 }
 
+/* Paragraph Styling */
 p {
-  line-height: 1.6;
+  line-height: 1.8;
   font-size: 18px;
+  text-align: justify; /* Justify text */
   margin-bottom: 20px;
 }
 
+/* List Styling */
 ul {
-  list-style-type: none;
+  list-style: none; /* Remove default bullet points */
   padding: 0;
+  font-size: 18px;
 }
 
 ul li {
-  font-size: 18px;
   margin: 10px 0;
-  position: relative;
 }
 
 ul li::before {
-  content: "★";
-  color: var(--pink);
-  font-size: 20px;
-  margin-right: 10px;
+  content: "◆"; /* Diamond bullet */
+  margin-right: 8px;
+  color: #ff9bec; /* Pink */
 }
 
-section {
-  margin-bottom: 30px;
+/* Section Divider */
+.section-divider {
+  border: 0;
+  border-top: 1px solid #81d4fa; /* Light Blue */
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+}
+
+.section-divider::before {
+  content: "☾"; /* Crescent Moon Symbol */
+  font-size: 20px;
+  color: #81d4fa; /* Light Blue */
+  background-color: #ffffff; /* White */
+  padding: 0 10px;
+  position: relative;
+  top: -10px; /* Adjust position to overlap the line */
+}
+
+/* Section Specific Padding */
+.about-me,
+.about-project,
+.how-it-works,
+.tools-used,
+.why {
+  padding: 10px 0;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  ul li {
+    font-size: 16px;
+  }
+  p {
+    font-size: 16px;
+  }
 }

@@ -164,7 +164,7 @@ Check out our Next.js deployment documentation for more details.
 ---
 ```
 
-## ** **Day 5 Log** **
+## ****Day 5 Log****
 
 ### ****Tasks Completed****
 

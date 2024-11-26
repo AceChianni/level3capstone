@@ -11,6 +11,7 @@ const HomePage = () => (
       <Sidebar />
     </div>
     <div className="main-content">
+      <h1 className="calligraphy">Thee Anniime Finder!</h1>
       <AnimeSlider />
     </div>
     <div className="right-sidebar">
