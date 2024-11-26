@@ -12,9 +12,7 @@
 /* Ensure each option is displayed on its own line */
 .poll-option {
   display: block;
-  /* Make sure each option is on its own line */
   margin-bottom: 10px;
-  /* Space between options */
 }
 
 /* Remove inline style for radio buttons and ensure block elements */
@@ -25,22 +23,34 @@ input[type="radio"] {
 /* Results and bar chart display */
 button {
   cursor: pointer;
+  background-color: #3b82f6;
+  /* Default blue background */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  /* Smooth transition for hover effect */
 }
 
+/* Button hover effect */
 button:hover {
-  background-color: #ff4081;
+  background-color: #2563eb;
+  /* Darker blue on hover */
 }
 
+/* Focus styles for button */
 button:focus {
   outline: none;
 }
 
+/* Poll container text */
 .poll-container .text-black {
   color: black;
-  /* Ensure all text is black */
 }
 
-/* Style for the bar chart labels and bars */
+/* Styling for the bar chart labels and bars */
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -63,7 +73,6 @@ button:focus {
 
 .text-white {
   color: white;
-  /* Default white color */
 }
 
 .text-xs {
@@ -95,7 +104,6 @@ button:focus {
 
 .bg-blue-500 .vote-text {
   color: black;
-  /* Ensure the text inside the blue bar is black */
 }
 
 /* Styling for the heart button */

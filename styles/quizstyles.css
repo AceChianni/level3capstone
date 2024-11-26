@@ -1,3 +1,4 @@
+/* quiz.css */
 /* General container styles */
 .quiz-container {
   display: flex;
@@ -11,7 +12,8 @@
 
 /* Quiz card styling */
 .quiz-card {
-  background-color: #e0f7fa; /* Light blue */
+  background-color: #e0f7fa;
+  /* Light blue */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -23,14 +25,16 @@
 }
 
 .quiz-card h2 {
-  font-size: 1.8rem; /* Slightly smaller text */
+  font-size: 1.8rem;
+  /* Slightly smaller text */
   margin-bottom: 20px;
   font-family: "Georgia", serif;
 }
 
 /* Darker blue card for results */
 .results-card {
-  background-color: #004d40; /* Dark blue */
+  background-color: #004d40;
+  /* Dark blue */
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -73,7 +77,8 @@
 
 /* Load more button styling */
 .load-more-button {
-  background-color: #81d4fa; /* Light blue */
+  background-color: #81d4fa;
+  /* Light blue */
   color: white;
   padding: 12px 30px;
   border: none;
@@ -85,14 +90,16 @@
 }
 
 .load-more-button:hover {
-  background-color: #29b6f6; /* Darker light blue */
+  background-color: #29b6f6;
+  /* Darker light blue */
 }
 
 /* Reset quiz button styling */
 .reset-quiz-button {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #81d4fa; /* Sky blue */
+  background-color: #81d4fa;
+  /* Sky blue */
   color: white;
   border: none;
   border-radius: 20px;
@@ -102,7 +109,8 @@
 }
 
 .reset-quiz-button:hover {
-  background-color: #29b6f6; /* Darker sky blue */
+  background-color: #29b6f6;
+  /* Darker sky blue */
 }
 
 /* Styling for individual questions */

@@ -1,19 +1,18 @@
+/* animeSlider.css */
 /* Slider container */
 .anime-slider {
   position: relative;
   display: flex;
   justify-content: center;
-  /* Centers the images horizontally */
   align-items: center;
-  /* Centers the images vertically */
   width: 100%;
-  /* Full width of the container */
   height: 500px;
-  /* Fixed height for the slider */
   overflow: hidden;
-  /* Prevents images from overflowing */
   margin: 0 auto;
   box-sizing: border-box;
+  background-color: rgba(173, 216, 230, 0.5);
+  /* Light blue with reduced opacity */
+  border-radius: 8px;
 }
 
 /* Slides */
@@ -21,7 +20,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  /* Pushes the title to the bottom of the image */
   align-items: center;
   width: 100%;
   height: 100%;
@@ -33,58 +31,42 @@
 .anime-slider img {
   display: block;
   width: 100%;
-  /* Ensures the image takes up full width of container */
   height: 100%;
-  /* Ensures the image covers the container height */
   object-fit: contain;
-  /* Keeps the entire image visible without distortion */
   max-width: 100%;
-  /* Ensures the image stays within the width of the container */
   border-radius: 8px;
-  /* Rounded corners to match container */
   margin-bottom: 40px;
-  /* Ensures there's space for the title */
   transition: width 0.5s, height 0.5s;
-  /* Smooth transition for resizing */
 }
 
 /* Title for each slide */
 .anime-slider h3 {
   color: #fff;
-  /* White text for the title */
   text-align: center;
   font-size: 18px;
   margin-top: 10px;
   background-color: rgba(0, 0, 0, 0.5);
-  /* background for better readability */
   width: 100%;
   padding: 10px 0;
-  /* Adds some padding to the title */
   position: absolute;
   bottom: 0;
   left: 0;
-  /* Position title at the bottom of the image */
 }
 
 /* Buttons at the bottom of the slider */
 .anime-slider .controls {
   position: absolute;
   bottom: 20px;
-  /* Position buttons 20px from the bottom */
   width: 100%;
-  /* Full width to stretch the buttons */
   display: flex;
   justify-content: space-between;
-  /* Spaces out the buttons on either side */
   padding: 0 20px;
-  /* Padding for buttons */
 }
 
 /* Navigation Buttons */
 .anime-slider .prev-btn,
 .anime-slider .next-btn {
   background-color: rgba(0, 0, 0, 0.5);
-  /* Semi-transparent black background */
   color: white;
   border: none;
   padding: 10px;
@@ -96,24 +78,18 @@
 .anime-slider .prev-btn:hover,
 .anime-slider .next-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
-  /* Darken when hovering */
 }
 
-/* Make sure the image always fills the container correctly on smaller screens */
+/* Responsive behavior for small screens */
 @media (max-width: 768px) {
   .anime-slider {
     height: auto;
-    /* Allow height to adjust on smaller screens */
     padding-bottom: 20px;
-    /* Add space at the bottom to avoid clipping the title */
   }
 
   .anime-slider img {
     height: auto;
-    /* Let the height adjust automatically to maintain aspect ratio */
     width: 100%;
-    /* Make sure the image scales responsively */
     object-fit: contain;
-    /* Keep the full image visible without distortion */
   }
 }

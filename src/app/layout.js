@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 export const metadata = {
   title: "Cap Project",
-  description: "A Next.js 13+ project with Tailwind and email functionality.",
+  description: "A Next.js 13+ project with Tailwind functionality.",
 };
 
 export default function RootLayout({ children }) {

@@ -1,3 +1,4 @@
+/* contactstyles.css */
 /* Define color variables for better maintainability */
 :root {
   --pink: #ff9bec;
@@ -79,11 +80,13 @@ button:hover {
 }
 
 .navbar {
-  background-color: var(--light-purple); /* Light purple navbar */
+  background-color: var(--light-purple);
+  /* Light purple navbar */
   overflow: hidden;
   text-align: center;
   position: fixed;
-  width: 100%; /* Full width */
+  width: 100%;
+  /* Full width */
   top: 0;
   z-index: 1000;
 }
@@ -95,11 +98,13 @@ button:hover {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 16px;
-  font-weight: bold; /* Make navigation links bold */
+  font-weight: bold;
+  /* Make navigation links bold */
 }
 
 .navbar a:hover {
-  background-color: #9b79ff; /* Darker purple on hover */
+  background-color: #9b79ff;
+  /* Darker purple on hover */
 }
 
 /* Custom Styling */

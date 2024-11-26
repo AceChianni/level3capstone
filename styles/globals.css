@@ -1,3 +1,7 @@
+/* globals.css */
+/* Import calligraphy font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 /* Tailwind CSS */
 @tailwind base;
 @tailwind components;
@@ -8,10 +12,24 @@ body,
 html {
     margin: 0;
     padding: 0;
-    padding-top: 4rem;
     font-family: "Arial", sans-serif;
     background-color: #ffd166;
+    /* Main background color */
     color: #333333;
+    /* Text color */
+    height: 100%;
+}
+
+/* Calligraphy Styling for h1 */
+.calligraphy {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #FF9BEC;
+    /* Calligraphy color */
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Remove default list styles for non-Tailwind styled navigation */
@@ -30,6 +48,7 @@ a:not([class]) {
 /* Navbar styles */
 .navbar {
     background-color: #ae9bff;
+    /* Light purple navbar */
     position: fixed;
     top: 0;
     width: 100%;
@@ -37,14 +56,12 @@ a:not([class]) {
     display: flex;
     justify-content: center;
     padding: 1rem;
-    /* Padding around the Navbar */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar ul {
     display: flex;
     gap: 1.5rem;
-    /* Space between the links */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -60,5 +77,11 @@ a:not([class]) {
 .navbar li a:hover {
     text-decoration: underline;
     color: #d1c4ff;
-    /* Lightened version of white for hover */
+    /* Lighter purple on hover */
+}
+
+/* Make sure the page content starts below the navbar */
+.layout {
+    margin-top: 4rem;
+    /* Adjust based on navbar height */
 }
