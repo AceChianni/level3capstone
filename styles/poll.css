@@ -1,5 +1,4 @@
 /* poll.css */
-
 .poll-container {
   font-family: Arial, sans-serif;
   margin-top: 20px;
@@ -20,24 +19,25 @@ input[type="radio"] {
   margin-right: 10px;
 }
 
-/* Results and bar chart display */
+/* Button common styling for poll and quiz */
 button {
   cursor: pointer;
-  background-color: #3b82f6;
-  /* Default blue background */
+  background-color: #81d4fa;
+  /* Sky blue */
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  /* Rounded rectangle shape */
   border: none;
   font-size: 16px;
   transition: background-color 0.3s ease;
-  /* Smooth transition for hover effect */
+  /* Smooth transition */
 }
 
-/* Button hover effect */
+/* Hover effect for poll and quiz buttons */
 button:hover {
-  background-color: #2563eb;
-  /* Darker blue on hover */
+  background-color: #a7c7e7;
+  /* Periwinkle on hover */
 }
 
 /* Focus styles for button */
