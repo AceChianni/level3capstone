@@ -164,9 +164,9 @@ Check out our Next.js deployment documentation for more details.
 ---
 ```
 
-## ****Day 5 Log****
+## \***\*Day 5 Log\*\***
 
-### ****Tasks Completed****
+### \***\*Tasks Completed\*\***
 
 - Enhanced the Quiz page functionality to handle user answers dynamically.
 - Updated the "Get Results" button to hide quiz cards and display recommendations.
@@ -175,7 +175,7 @@ Check out our Next.js deployment documentation for more details.
 - Created a "Reset Quiz" button to restart the quiz, clear results, and hide popups.
 - Styled the popup to improve visibility and ensure it only shows once if no recommendations are found.
 
-### ****Challenges and Solutions****
+### \***\*Challenges and Solutions\*\***
 
 - **Challenge**: Ensuring the quiz cards disappeared after clicking "Get Results."
   - **Solution**: Added a `quizFinished` state to toggle visibility of the quiz and results sections.
@@ -184,14 +184,46 @@ Check out our Next.js deployment documentation for more details.
 - **Challenge**: Managing state and ensuring smooth transitions between quiz questions, results, and popups.
   - **Solution**: Streamlined state updates and implemented conditional rendering based on the quiz status.
 
-### ****Learnings and Insights****
+### \***\*Learnings and Insights\*\***
 
 - Improved understanding of state management and conditional rendering in React.
 - Reinforced the importance of user feedback mechanisms like popups and alerts for seamless UX.
 - Learned how to create reusable logic for showing/hiding UI elements based on component state.
 
-### ****Next Steps****
+### \***\*Next Steps\*\***
 
 - Implement the contact form with functional email submission.
 - Start exploring the Magic Link authentication feature for user sign-ins.
 - Continue refining styles and improving overall UI/UX consistency.
+
+## \***\*Day 6 Log\*\***
+
+### \***\*Tasks Completed\*\***
+
+- Integrated Resend API to implement functional email submission for the contact form.
+- Set up server-side email handling with a custom API route in Next.js (`/api/email`).
+- Enhanced contact form validation and feedback, ensuring a smoother user experience.
+- Tested email functionality with successful email delivery to the specified address.
+- Styled the contact form and popup for better user interaction and visibility.
+
+### \***\*Challenges and Solutions\*\***
+
+- **Challenge**: API request returning a 404 error for the `/api/email` route.
+  - **Solution**: Verified file structure in the `src/app/api/email/route.js` and ensured proper route configuration. Restarted the server to apply changes.
+- **Challenge**: Ensuring email sending functionality works properly and securely using the Resend API.
+  - **Solution**: Used environment variables to securely store the Resend API key and confirmed the correct email format for the "from" field.
+- **Challenge**: Ensuring proper error handling and user feedback in case of email failure.
+  - **Solution**: Implemented error handling in the API route to log errors and return meaningful responses to the frontend.
+
+### \***\*Learnings and Insights\*\***
+
+- Gained hands-on experience with email APIs and integrating external services like Resend.
+- Strengthened knowledge of handling API requests and managing sensitive information securely in environment variables.
+- Improved ability to debug network-related issues by checking route paths and server configurations.
+
+### \***\*Next Steps\*\***
+
+- Test the contact form thoroughly to ensure it works across different environments (development, staging, production).
+- Continue refining the UI/UX for the contact form and popup.
+- Begin implementing Magic Link authentication for the contact form submission (if applicable).
+- Review overall error handling and implement any necessary improvements.
