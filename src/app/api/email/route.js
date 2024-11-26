@@ -14,7 +14,7 @@ export async function POST(req) {
 
   try {
     const result = await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "chantricelacabe@gmail.com", // verified email address
       to,
       subject,
       html,
@@ -24,6 +24,7 @@ export async function POST(req) {
       status: 200,
     });
   } catch (error) {
+    console.error("Error sending email:", error); // Improved error logging
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
     });
