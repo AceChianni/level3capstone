@@ -1,69 +1,130 @@
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  background-color: #004d40;
-  padding: 10px;
+/* Define color variables for better maintainability */
+:root {
+  --pink: #ff9bec;
+  --teal: #5dd9c1;
+  --purple: #5b507a;
+  --light-purple: #ae9bff;
+  --peach: #ffe1b3;
 }
 
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--peach);
+  color: var(--purple);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-  margin: 20px auto;
-  width: 90%;
   max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   text-align: center;
-  color: #004d40;
+  font-size: 36px;
+  color: var(--pink);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
 label {
-  display: block;
   font-weight: bold;
+  color: var(--pink);
   margin-bottom: 5px;
 }
 
-input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
 textarea {
-  width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  font-size: 16px;
+  border: 1px solid var(--light-purple);
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: var(--pink);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: var(--teal);
+}
+
+.navbar {
+  background-color: var(--light-purple); /* Light purple navbar */
+  overflow: hidden;
+  text-align: center;
+  position: fixed;
+  width: 100%; /* Full width */
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold; /* Make navigation links bold */
+}
+
+.navbar a:hover {
+  background-color: #9b79ff; /* Darker purple on hover */
+}
+
+/* Custom Styling */
+.container {
+  position: relative;
 }
 
 .submit-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #ff7043;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  align-self: center;
 }
 
+/* Popup Styling */
 .popup {
-  background-color: #81d4fa;
-  color: #004d40;
-  padding: 15px;
-  text-align: center;
-  border: 1px solid #004d40;
-  border-radius: 5px;
+  display: none;
   position: fixed;
-  top: 20%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1000;
-  display: none;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 18px;
+  color: var(--purple);
 }
 
 .popup.visible {

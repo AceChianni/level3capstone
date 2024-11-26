@@ -1,5 +1,6 @@
 "use client";
 import ContactForm from "@/components/ContactForm";
+import "/styles/contactstyles.css";
 
 export default function ContactPage() {
   return (
