@@ -37,7 +37,7 @@ export default function ContactForm() {
       </form>
 
       {isPopupVisible && (
-        <div id="popup" className="popup">
+        <div id="popup" className="popup visible">
           <p>Thanks, someone will contact you soon.</p>
         </div>
       )}
