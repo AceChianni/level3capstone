@@ -163,3 +163,35 @@ Check out our Next.js deployment documentation for more details.
 
 ---
 ```
+
+## ** **Day 5 Log** **
+
+### ****Tasks Completed****
+
+- Enhanced the Quiz page functionality to handle user answers dynamically.
+- Updated the "Get Results" button to hide quiz cards and display recommendations.
+- Implemented logic to display recommendations based on selected genres.
+- Added a "Load More" button to fetch additional recommendations.
+- Created a "Reset Quiz" button to restart the quiz, clear results, and hide popups.
+- Styled the popup to improve visibility and ensure it only shows once if no recommendations are found.
+
+### ****Challenges and Solutions****
+
+- **Challenge**: Ensuring the quiz cards disappeared after clicking "Get Results."
+  - **Solution**: Added a `quizFinished` state to toggle visibility of the quiz and results sections.
+- **Challenge**: Popup showing twice after submission.
+  - **Solution**: Adjusted the logic to prevent duplicate triggers and ensured the popup only appears when necessary.
+- **Challenge**: Managing state and ensuring smooth transitions between quiz questions, results, and popups.
+  - **Solution**: Streamlined state updates and implemented conditional rendering based on the quiz status.
+
+### ****Learnings and Insights****
+
+- Improved understanding of state management and conditional rendering in React.
+- Reinforced the importance of user feedback mechanisms like popups and alerts for seamless UX.
+- Learned how to create reusable logic for showing/hiding UI elements based on component state.
+
+### ****Next Steps****
+
+- Implement the contact form with functional email submission.
+- Start exploring the Magic Link authentication feature for user sign-ins.
+- Continue refining styles and improving overall UI/UX consistency.

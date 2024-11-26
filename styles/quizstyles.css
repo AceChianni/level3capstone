@@ -114,12 +114,12 @@
 
 .question label {
   display: flex;
-  align-items: center; /* Align radio button with text */
+  align-items: center;
   margin: 10px 0;
 }
 
 .question input[type="radio"] {
-  margin-right: 10px; /* Space between radio and label */
+  margin-right: 10px;
 }
 
 button {
